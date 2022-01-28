@@ -1,0 +1,80 @@
+<div class="container mt-5">
+  <h2 class="display-4">Template Drievn form</h2>
+
+  <form #frm="ngForm" (ngSubmit)="onSubmit(frm)">
+    <div class="form-group">
+      <label>First name</label>
+      <input
+        type="text"
+        placeholder="Full name"
+        name="fullName"
+        ngModel
+        class="form-control"
+        #fullName="ngModel"
+        (change)="getNameValue(fullName)"
+        required
+        [ngClass]="{ 'is-invalid': fullName.touched && fullName.invalid }"
+        minlength="1"
+        maxlength="10">
+
+      <div *ngIf="fullName.errors?.required">
+        <div
+          class="alert alert-danger"
+          *ngIf="fullName.touched && fullName.invalid">
+          Full name is required
+        </div>
+      </div>
+      <div *ngIf="fullName.errors?.minlength">
+        <div
+          class="alert alert-danger"
+          *ngIf="fullName.touched && fullName.invalid">
+          Full name must be atleast 5 charctors
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input
+        type="email"
+        placeholder="Email"
+        name="email"
+        ngModel
+        class="form-control"
+        #email="ngModel"
+        (change)="getEmail(email)"
+        [ngClass]="{ 'is-invalid': email.touched && email.invalid }"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        required>
+        <div *ngIf="email.errors?.required">
+          <div
+            class="alert alert-danger"
+            *ngIf="email.touched && email.invalid">
+            Email is required
+          </div>
+        </div>
+        <div *ngIf="email.errors?.pattern">
+          <div
+            class="alert alert-danger"
+            *ngIf="email.touched && email.invalid">
+            Invalid email address
+          </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label>Address</label>
+      <textarea
+        cols="30"
+        rows="5"
+        type="text"
+        placeholder="address"
+        name="address"
+        ngModel
+        class="form-control"
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="frm.invalid">Submit</button>
+  </form>
+</div>
