@@ -1,4 +1,65 @@
-<h1>Angular app</h1>
-<app-navbar></app-navbar>
+<h1 class="display-3">Angular app</h1>
+<app-template-driven-form></app-template-driven-form>
+<br><br>
+<example-reactive-form></example-reactive-form>
+<br><br>
+<app-reactive-form></app-reactive-form>
+
+<!-- <app-navbar></app-navbar>
 <app-post [fromParent]="parentMessage"></app-post>
 <p>{{meassage}}</p>
+
+<button (click)="buttonClick()">Click</button>
+<br><br>
+<input type="text" (keyup.enter)="onKeyUp()" [(ngModel)]="userName">
+<h2>{{userName}}</h2>
+
+<h1>Form-task</h1>
+<input type="text" placeholder="Header" [(ngModel)]="formHeader">
+<button (click)="captureClickEvent()">Click</button>
+<br><br>
+<input type="text" [(ngModel)]="imgUrl" placeholder="Imag Url">
+
+<h2 [style.background]="bool ? 'red' : ''">{{formHeader}}</h2>
+<img [src]="imgUrl" alt="Img url" srcset="">
+
+<h1>Color Array</h1>
+<button (click)="addNewPost()">Add</button>
+<ul>
+    <li *ngFor="let arr of posts; let i = index">{{i}} :: {{ arr.post | appendCLI }}</li>
+</ul>
+<br><br>
+
+<h3>{{dummyText | summary:70}}</h3>
+
+<h1>Array of object</h1>
+<button (click)="addNew()">Add</button>
+<ul *ngFor="let obj of posts">
+    <li>{{ obj.id }} :: {{ obj.post }}</li>
+    <button (click)="onDelete(obj)">Delete</button>
+</ul>
+
+<div class="form-area">
+    <input type="text" placeholder="Name" name="" id="" [(ngModel)]="name">
+    <br><br>
+    <input type="text" placeholder="Email" name="" id="" [(ngModel)]="email">
+    <br><br>
+    <textarea type="text" placeholder="Name" name="" id="" [(ngModel)]="address"></textarea>
+    <br><br>
+
+    <button (click)="saveData()">Save data</button>
+</div>
+<br><br>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+    </tr>
+    <tr *ngFor="let user of userArray">
+        <td>{{user.name | toUpperCase}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.address}}</td>
+    </tr>
+</table> -->
