@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { PostListComponent } from '../post-list/post-list.component';
-
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
@@ -15,11 +16,19 @@ export class PostComponent implements OnInit {
   @Input() fromParent: string;
   @ViewChild(PostListComponent) postChildComponent: PostListComponent;
 
-  constructor() {
-    console.log(this.postChildComponent);
+  constructor(private route: ActivatedRoute) {
+    // console.log(this.postChildComponent);
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(value => {
+      console.log(value);
+      let id = value.get('id');
+      console.log(id);
+    })
+
+    
+  }
 
   catchData(ev) {
     this.childData = ev;

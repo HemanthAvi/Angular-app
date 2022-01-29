@@ -1,3 +1,9 @@
 <h2>{{toPostListChild}}</h2>
 
 <button (click)="sendToParent()">Send</button>
+
+<div class="container" *ngFor="let post of posts; let idx = index">
+    <h1 class="display-4">{{post.id}}</h1>
+    <button class="btn btn-primary" [routerLink]="['/post', idx]">View Content</button>
+    <hr>
+</div>

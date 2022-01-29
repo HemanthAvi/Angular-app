@@ -1,9 +1,13 @@
 <h1 class="display-3">Angular app</h1>
-<app-template-driven-form></app-template-driven-form>
-<br><br>
-<example-reactive-form></example-reactive-form>
-<br><br>
-<app-reactive-form></app-reactive-form>
+
+<div class="container">
+    <button class="btn btn-primary m-2" routerLink="/" >Home</button>
+    <button class="btn btn-primary m-2" routerLink="/reactive-form" routerLinkActive="btn-danger">Form component</button>
+    <button class="btn btn-primary m-2" routerLink="/post-list" routerLinkActive="btn-danger">Post list</button>
+</div>
+
+<router-outlet></router-outlet>
+
 
 <!-- <app-navbar></app-navbar>
 <app-post [fromParent]="parentMessage"></app-post>
